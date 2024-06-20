@@ -1,6 +1,6 @@
 # nova-helper
 ## A set of Python functions which read in nova light curve data, optimize zero-point magnitude offsets between observers, and produce a smoothed curve. 
-## This program currently supports csv files. Headers for the input data table must include 'JD', 'Magnitude', 'Uncertainty', 'Band', and 'Observer'.
+## This program currently supports comma-separated data. Headers for the input data table must include 'JD', 'Magnitude', 'Uncertainty', 'Band', and 'Observer'.
 ## Defining helper functions for analyzing nova light curves:
 
 -read_data(file,bandpass) reads in the csv data file and selects a specific bandpass. It returns Numpy arrays observer, JD, magnitude, uncertainty.
