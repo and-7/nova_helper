@@ -15,4 +15,4 @@
 
 -combine_obs_data(obs_data) combines all data in a sorted nested list into one optimally smooth curve. The input obs_data must be a nested list in the same format returned by return_obs_data. The first observer code in the nested list (the one with the most observations) is taken as the reference with respect to magnitude offsets. Returned values are lists obs_ref, JD_ref, mag_ref, uncer_ref and tuple (offset_names, offset_len, offset_values). This includes smoothed observer, JD, magnitude, and uncertainty data; offset_names, offset_len, and offset_values are lists containing information for each observer code. Offset_names contains the codes, offset_len contains the respective number of observations, and offset_values contains the respective magnitude offset.
 
-### See ExampleScript_V1723_Sco_V.txt for a practical example of utilizing this program.
+### See ExampleScript_V1723_Sco_V.txt for an example of smoothing a light curve using this program.
