@@ -1,6 +1,5 @@
 ## importing libraries
 
-import matplotlib.pyplot as plt
 from astropy.table import Table
 import numpy as np
 from nova_helper import read_data,return_obs_data,combine_obs_data
