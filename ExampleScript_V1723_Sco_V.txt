@@ -7,7 +7,7 @@ from nova_helper import read_data,return_obs_data,combine_obs_data
 
 ## using nova_helper to create a smoothed light curve in the V band for the nova V1723 Sco
 
-obs_V_raw,JD_V_raw,mag_V_raw,uncer_V_raw = read_data('ExampleData_V1723_Sco_aavso_2024-06-17.txt','V')
+obs_V_raw,JD_V_raw,mag_V_raw,uncer_V_raw = read_data('ExampleData_V1723_Sco_aavso_2024-06-17.csv','V')
 obs_data_V = return_obs_data(obs_V_raw,JD_V_raw,mag_V_raw,uncer_V_raw)
 obs_V,JD_V,mag_V,uncer_V,offset_V = combine_obs_data(obs_data_V)
 
