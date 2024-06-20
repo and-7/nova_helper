@@ -1,4 +1,4 @@
-# lightcurve-smoothing
+# nova-helper
 # A set of Python functions which read in csv nova lightcurve data and optimize zero-point magnitude offsets between observers, producing a smoothed curve.
 
 ##############################################
