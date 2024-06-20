@@ -11,7 +11,7 @@ obs_V_raw,JD_V_raw,mag_V_raw,uncer_V_raw = read_data('ExampleData_V1723_Sco_aavs
 obs_data_V = return_obs_data(obs_V_raw,JD_V_raw,mag_V_raw,uncer_V_raw)
 obs_V,JD_V,mag_V,uncer_V,offset_V = combine_obs_data(obs_data_V)
 
-## plotting using matplotlib and saving the output figures:
+## plotting using matplotlib:
 
 ## raw curve
 plt.scatter(JD_V_raw,mag_V_raw,s=0.5,c='k')
@@ -20,7 +20,6 @@ plt.xlabel('JD')
 plt.ylim([np.amax(mag_V)+2,np.amin(mag_V)-2])
 plt.ylabel('Magnitude')
 plt.title('V1723 Sco Light Curve (No Offsets, Band=V)')
-plt.savefig('Example_V1723_Sco_V_raw_curve.jpeg')
 plt.show()
 
 ## smoothed curve
@@ -30,7 +29,6 @@ plt.xlabel('JD')
 plt.ylim([np.amax(mag_V)+2,np.amin(mag_V)-2])
 plt.ylabel('Magnitude')
 plt.title('V1723 Sco Light Curve (Offsets, Band=V)')
-plt.savefig('Example_V1723_Sco_V_offset_curve.jpeg')
 plt.show()
 
 ## saving the smoothed data and log of offset information to csv files using Astropy.table
