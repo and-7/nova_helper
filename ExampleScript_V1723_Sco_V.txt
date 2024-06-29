@@ -11,6 +11,7 @@ obs_data_V = return_obs_data(obs_V_raw,JD_V_raw,mag_V_raw,uncer_V_raw)
 obs_V,JD_V,mag_V,uncer_V,offset_V = combine_obs_data(obs_data_V)
 
 ## plotting using matplotlib:
+import matplotlib.pyplot as plt
 
 ## raw curve
 plt.scatter(JD_V_raw,mag_V_raw,s=0.5,c='k')
