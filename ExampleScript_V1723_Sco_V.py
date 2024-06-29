@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 ## importing libraries
 
 from astropy.table import Table
