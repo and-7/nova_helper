@@ -21,7 +21,20 @@ def read_data(file,bandpass):
     ## now we mask out the requested band and return the JD, magnitude, uncertainty, observer
     return observer[band==bandpass],JD[band==bandpass],magnitude[band==bandpass],uncertainty[band==bandpass]
 
+#############################################
+
+def remove_points(observer,JD,magnitude,uncertainty,target_JD):
+    ## finding all of the points within 0.001 day of points in the target set
+    for i in range(len(target_JD)):
+        for j in range(len(JD)):
+            if np.abs(target_JD[i]-JD[j]) <= 0.001:
+                JD[j] = 0
+    ## now we mask out the requested points and return the JD, magnitude, uncertainty, observer as Numpy arrays
+    observer_mask,JD_mask,magnitude_mask,uncertainty_mask = observer[JD != 0],JD[JD != 0],magnitude[JD != 0],uncertainty[JD != 0] 
+    return observer_mask,JD_mask,magnitude_mask,uncertainty_mask
+
 ##############################################
+
 
 ## returning observation data as a nested list:
 ## [ [[observer1],[JD1],[mag1],[uncer1]] , [[observer2],[JD2],mag2],[uncer2]] , ...]
