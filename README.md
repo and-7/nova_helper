@@ -5,6 +5,8 @@
 
 -read_data(file,bandpass) reads in the csv data file and selects a specific bandpass. It returns Numpy arrays observer, JD, magnitude, uncertainty.
 
+-remove_points(observer,JD,magnitude,uncertainty,target_JD) accepts Numpy arrays of observation data, as well as an array of JD points a user would like to remove from the set. If a target JD is within 0.001 days of an observation in the input data set, then that point will be removed.
+
 -return_obs_data(observer,JD,magnitude,uncertainty) creates a nested list with the observation data, sorted by observer code, in descending number of observations. Any observer code with less than 10 observations is not included. The returned list is of the format [ [[observer1],[JD1],[mag1],[uncer1]] , [[observer2],[JD2],mag2],[uncer2]] , ...]. 
 
 -combined_sorted_data(obs1,JD1,mag1,uncer1,obs2,JD2,mag2,uncer2) combines two sets of data consisting of observer, JD, magnitude, and uncertainty, and sorts in order of ascending JD. It returns lists obs, JD, mag, uncer. 
@@ -15,4 +17,4 @@
 
 -combine_obs_data(obs_data) combines all data in a sorted nested list into one optimally smooth curve. The input obs_data must be a nested list in the same format returned by return_obs_data. The first observer code in the nested list (the one with the most observations) is taken as the reference with respect to magnitude offsets. Returned values are lists obs_ref, JD_ref, mag_ref, uncer_ref and tuple (offset_names, offset_len, offset_values). This includes smoothed observer, JD, magnitude, and uncertainty data; offset_names, offset_len, and offset_values are lists containing information for each observer code. Offset_names contains the codes, offset_len contains the respective number of observations, and offset_values contains the respective magnitude offset.
 
-### See ExampleScript_V1723_Sco_V.txt for an example of smoothing a light curve using this program.
+### See ExampleScript_V1723_Sco_V.py for an example of smoothing a light curve using this program.
